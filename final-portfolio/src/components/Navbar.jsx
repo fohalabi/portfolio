@@ -78,18 +78,19 @@ const Navbar = () => {
                 )}>
                     {/* Close (X) button */}
                     <button
-                        className="absolute top-6 right-6 flex flex-col justify-center items-center w-8 h-8"
+                        className="absolute top-4 right-4 flex flex-col justify-center items-center w-6 h-6"
                         onClick={() => setIsMenuOpen(false)}
                         aria-label="Close menu"
+                        style={{ zIndex: 50 }}
                     >
                         <span
-                            className="block w-6 h-0.5 bg-primary rotate-45 translate-y-2 transition-all duration-300"
+                            className="block w-5 h-0.5 bg-primary rotate-45 translate-y-1 transition-all duration-300"
                         />
                         <span
-                            className="block w-6 h-0.5 bg-primary -rotate-45 -translate-y-2 transition-all duration-300"
+                            className="block w-5 h-0.5 bg-primary -rotate-45 -translate-y-1 transition-all duration-300"
                         />
                     </button>
-                    <div className='flex flex-col space-y-8 text-xl'>
+                    <div className='flex flex-col space-y-6 text-xl'>
                         {navItems.map((item) => (
                             <a key={item.name}
                                 href={item.href}
