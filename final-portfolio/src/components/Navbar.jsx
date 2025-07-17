@@ -76,20 +76,18 @@ const Navbar = () => {
                     "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center md:hidden",
                     isMenuOpen ? "flex" : "hidden"
                 )}>
-                    {/* Close (X) button */}
-                    <button
-                        className="absolute top-4 right-4 flex flex-col justify-center items-center w-6 h-6"
-                        onClick={() => setIsMenuOpen(false)}
-                        aria-label="Close menu"
-                        style={{ zIndex: 50 }}
-                    >
-                        <span
-                            className="block w-5 h-0.5 bg-primary rotate-45 translate-y-1 transition-all duration-300"
-                        />
-                        <span
-                            className="block w-5 h-0.5 bg-primary -rotate-45 -translate-y-1 transition-all duration-300"
-                        />
-                    </button>
+                {/* Close (X) button */}
+                <button
+                    className="absolute top-4 right-4 z-50 p-2 rounded-md bg-background/80"
+                    onClick={() => setIsMenuOpen(false)}
+                    aria-label="Close menu"
+                >
+                    <div className="relative w-6 h-6">
+                        <span className="absolute inset-0 w-full h-0.5 bg-primary rotate-45 origin-center" />
+                        <span className="absolute inset-0 w-full h-0.5 bg-primary -rotate-45 origin-center" />
+                    </div>
+                </button>
+
                     <div className='flex flex-col space-y-6 text-xl'>
                         {navItems.map((item) => (
                             <a key={item.name}
